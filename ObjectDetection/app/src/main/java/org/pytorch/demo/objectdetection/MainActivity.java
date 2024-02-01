@@ -47,7 +47,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Runnable {
     private int mImageIndex = 0;
-    private String[] mTestImages = {"test1.png", "test2.jpg", "test3.png"};
+    private String[] mTestImages = {"b.jpg", "test1.png", "test2.jpg", "test3.png"};
 
     private ImageView mImageView;
     private ResultView mResultView;
@@ -182,8 +182,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
         try {
             //该ptl文件需要从https://github.com/samrychan/yolov5或者https://github.com/jeffxtang/yolov5/fork的export.py中导出才跟本app-demo一致，不报错
-            mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "yolov5s.torchscript.jeffxtang.ptl"));
-            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
+            mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "best.torchscript.ptl"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("plate.txt")));
             String line;
             List<String> classes = new ArrayList<>();
             while ((line = br.readLine()) != null) {
